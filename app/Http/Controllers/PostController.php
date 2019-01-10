@@ -27,6 +27,6 @@ class PostController extends Controller {
     }
 
     public function index () {
-        return $this->posts->getall();
+        return $this->posts->getAllWithUsers();
     }
 }

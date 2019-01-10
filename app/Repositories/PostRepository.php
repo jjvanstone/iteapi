@@ -23,4 +23,8 @@ class PostRepository extends BaseRepository implements IPostRepository
 
         return ['result' => $this->model->save(), 'id' => $this->model->id];
     }
+
+    public function getAllWithUsers() {
+        return $this->model::orderByDesc('created_at')->with('user')->get();
+    }
 }
